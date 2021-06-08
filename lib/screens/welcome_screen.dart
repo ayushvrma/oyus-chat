@@ -1,3 +1,4 @@
+import 'package:flash_chat/constants.dart';
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
@@ -28,7 +29,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
 
     // animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);  //curves cant have an upper bound greater than 1 in their controller
 
-    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white).animate(controller); //to transition from one color to another
+    animation = ColorTween(begin: Colors.blueGrey, end: bgcolor).animate(controller); //to transition from one color to another
 
     controller.forward();
     // can also go controller.reverse(from: 1.0);
@@ -78,17 +79,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 Hero(
                   tag: 'Logo',
                   child: Container(
-                    child: Image.asset('images/logo.png'),
+                    child: Image.asset('images/chatbox.png'),
                     // height: animation.value * 100,
-                    height: 60.0,
+                    height: 40.0,
+                    padding: EdgeInsets.only(right: 10.0),
                   ),
                 ),
                 TypewriterAnimatedTextKit(  //new animation text kit
                   // '${controller.value.toInt()}%', //another application of controller values
-                  text:['Flash Chat'],
+                  text:['oyus chat'],
                   textStyle: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
+                    color: Colors.white,
                   ),
                 ),
               ],

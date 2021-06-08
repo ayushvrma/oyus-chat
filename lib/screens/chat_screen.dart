@@ -64,6 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgcolor,
       appBar: AppBar(
         leading: null,
         actions: <Widget>[
@@ -75,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 //Implement logout functionality
               }),
         ],
-        title: Text('⚡️Chat'),
+        title: Text('oyus chat'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
@@ -96,6 +97,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         messageText = value;
                         //Do something with the user input.
                       },
+                      style: TextStyle(color: Colors.white),
                       decoration: kMessageTextFieldDecoration,
                     ),
                   ),
@@ -115,6 +117,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ],
               ),
             ),
+            SizedBox(height: 5.0,)
           ],
         ),
       ),
@@ -175,7 +178,7 @@ class MessageBubble extends StatelessWidget {
         children: [
           Text(
             sender,
-            style: TextStyle(fontSize: 10.0, color: Colors.black54),
+            style: TextStyle(fontSize: 10.0, color: Colors.white70),
           ),
           Material(
             elevation: 5.0,

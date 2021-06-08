@@ -28,7 +28,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: bgcolor,
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
@@ -41,8 +41,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 child: Hero(
                   tag: 'Logo',  //should match with the initial widget
                   child: Container(
-                    height: 200.0,
-                    child: Image.asset('images/logo.png'),
+                    height: 150.0,
+                    child: Image.asset('images/chatbox.png'),
                   ),
                 ),
               ),
@@ -55,9 +55,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   //Do something with the user input.
                 },
                   textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
                   keyboardType: TextInputType.emailAddress,
                 decoration: kTextFieldDecorator.copyWith(
-                  hintText: 'Enter your email'
+                  hintText: 'Enter your email',
+                    hintStyle: TextStyle(color: Colors.white38)
                 )
               ),
               SizedBox(
@@ -71,8 +73,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 },
                   textAlign: TextAlign.center,
                   obscureText: true,
+                  style: TextStyle(color: Colors.white),
                 decoration: kTextFieldDecorator.copyWith(
                   hintText: 'Enter your password',
+                    hintStyle: TextStyle(color: Colors.white38)
                 )
               ),
               SizedBox(
